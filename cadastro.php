@@ -9,6 +9,7 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <link rel="stylesheet" type="text/css" href="CSS/cadastro.css">
 <script src="JS/cadastro.js"></script>
 <!------ Include the above in your HEAD tag ---------->
@@ -154,7 +155,8 @@ if(isset($_POST['tCadastrar'])) {
     
     $assinanteDAO->Cadastrar($assinante);
 
-    echo "<script>alert('Cadastrado com sucesso!');window.location.href='index.php'</script>";
+    ?><script>swal("Cadastradocomsucesso!", "Seja Bem Vindo!", "success");window.location.href='index.php'</script>;
+    <?php
 
 }
 

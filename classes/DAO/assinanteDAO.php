@@ -53,15 +53,17 @@
             }
         }
 
-        function listaClientesNomes($nomeAssinante) {
+        function listaClientesNomes() {
             try{
-                $stmt = $pdo->query("SELECT nomeAssinante FROM assinantes");
+                $stmt = $this->pdo->query("SELECT idAssinante,nomeAssinante FROM assinantes");
 
                 while ($row = $stmt->fetch()) {
                     ?>
                     <tr>
-                        <th scope="row">1</th>
-                        <td><?php echo $row['nomeAssinante']."<br />\n";?></td>
+                        <th scope="row"><?php echo $row['idAssinante']."<br/>\n"?></th>
+                        <td><?php echo $row['nomeAssinante'];?></td>
+                        <td><button type="button" name="tDelete" class="btn btn-outline-danger">Deletar</button>
+                        <button type="button" class="btn btn-outline-info">Info</button><br/></td>
                     </tr>
                     <?php
                 }
@@ -69,4 +71,18 @@
                 echo "ERRO 03: {$ex->getMessage()}";
             }
         }
+
+        /*function deletaUsuario(){
+            try {
+                $stmt = $this->pdo->prepare('DELETE FROM assinantes WHERE id = :id');
+                $stmt->bindValue(':id', $entAssinante->setId()); 
+                $stmt->execute();
+                
+                
+                echo $stmt->rowCount(); 
+              } catch(PDOException $e) {
+                echo 'Error: ' . $e->getMessage();
+              }
+              ?>
+        }*/
     }

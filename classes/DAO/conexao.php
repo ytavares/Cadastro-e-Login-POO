@@ -11,13 +11,13 @@ class Conexao {
 
     public function Connect() {
         try{
-            $this->user = "id10383449_ytavares";
+            $this->user = "root";
 
-            $this->senha = "syr111828";
+            $this->senha = "";
 
             $this->host = "localhost";
 
-            $this->base = "id10383449_testeback";
+            $this->base = "testeback";
 
 
             $parametros = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES UTF8"); //Definimos a conexao com o banco no padrão UTF-8

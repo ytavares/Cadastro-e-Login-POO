@@ -25,14 +25,15 @@
     <body>
         <header>
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-                <a class="navbar-brand" href="#">Painel Notícias</a>
+                <a class="navbar-brand" href="#">WebDec</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Alterna navegação">
                   <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                   <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="noticias.html">Home</a>
-                    <a class="nav-item nav-link active" href="minhaconta.html">Minha Conta <span class="sr-only">(Página atual)</span></a>
+                    <a class="nav-item nav-link" href="home.html">Home</a>
+                    <a class="nav-item nav-link active" href="usuarios.php">Usuários <span class="sr-only">(Página atual)</span></a>
+                    <a class="nav-item nav-link" href="index.php">Sair</a>
                   </div>
                 </div>
               </nav>
@@ -43,12 +44,14 @@
             <tr>
               <th scope="col">id</th>
               <th scope="col">Nome</th>
+              <th scope="col">&nbsp; &nbsp; &nbsp; &nbsp; Opções</th>
             </tr>
           </thead>
           <tbody>
-            <?php $assinanteDAO->listaClientesNomes($nomeAssinante);?>
+            <?php $assinanteDAO->listaClientesNomes();?>
           </tbody>
         </table>
 
     </body>
 </html>
+
